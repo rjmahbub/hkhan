@@ -13,7 +13,7 @@ app.use(productRouter);
 
 //database connection with mongoose
 const connectionpOptions = {dbName: `hkhan`}
-mongoose.connect(process.env.DB_URL, connectionpOptions)
+mongoose.connect(process.env.DB_CONNECT_URL, connectionpOptions)
 .then(() => {
   const PORT = 3000;
   app.listen(PORT, ()=>{
