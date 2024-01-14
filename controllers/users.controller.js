@@ -6,28 +6,23 @@ exports.getUsers = (req, res) => {
   res.sendFile(path.join(__dirname + "/../views/index.html"));
 };
 
-
-
-
 exports.saveUser = async function (req, res) {
   const {name, phone, password} = req.body;
   const User = new UserModel({ name, phone, password: await bcrypt.hash(password, 10) });
   const newProduct = await User.save();
   if(newProduct === User){
-    res.send('Success');
+    res.status(200).json({
+      success: true,
+      'message': 'Member was saved successfully!'
+    });
   }else{
-    res.send('error')
+    res.status(500).json({
+      success: false,
+      'message': 'Server Error!'
+    });
   }
-  
-  /* const name = req.body.name;
-  const age = Number(req.body.age);
-  const user = {
-    name,
-    age,
-  };
-  users.push(user);
-  res.status(201).json({
-    success: true,
-    users,
-  }); */
+};
+
+exports.checkLogin = (req, res) => {
+  res.send('true')
 };
