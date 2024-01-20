@@ -13,6 +13,14 @@ const userSchema = mongoose.Schema({
     type: String,
     required: true
   },
+  status: {
+    type: Number,
+    default: 1
+  },
+  role: {
+    type: Number,
+    default: 3
+  },
   created_at: {
     type: Date,
     default: Date.now

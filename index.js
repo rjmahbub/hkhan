@@ -3,8 +3,6 @@ const cors = require('cors');
 const mongoose = require("mongoose");
 require('dotenv').config();
 const userRouter = require("./routes/users.route");
-const productRouter = require("./routes/products.route");
-
 
 const app = express();
 app.use(cors());
@@ -12,7 +10,6 @@ app.use(express.json());
 
 app.use(express.urlencoded({ extended: true }));
 app.use(userRouter);
-app.use(productRouter);
 
 //database connection with mongoose
 const connectionpOptions = {dbName: `hkhan`}
