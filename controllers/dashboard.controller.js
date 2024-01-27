@@ -1,3 +1,0 @@
-exports.Index = (req, res) => {
-  //
-};
