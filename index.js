@@ -2,16 +2,16 @@ const express = require("express");
 const cors = require('cors');
 const mongoose = require("mongoose");
 require('dotenv').config();
-const userRouter = require("./routes/users.route");
-const dashboardRouter = require("./routes/dashboard.route");
+//const userRouter = require("./routes/users.route");
+//const dashboardRouter = require("./routes/dashboard.route");
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
 app.use(express.urlencoded({ extended: true }));
-app.use(userRouter);
-app.use(dashboardRouter);
+//app.use(userRouter);
+//app.use(dashboardRouter);
 
 //database connection with mongoose
 const connectionpOptions = {dbName: `hkhan`}
