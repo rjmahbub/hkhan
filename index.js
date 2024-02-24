@@ -9,8 +9,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use(express.urlencoded({ extended: true }));
-
 //database connection with mongoose
 const connectionpOptions = {dbName: `hkhan`}
 mongoose.connect(process.env.DB_CONNECT_URL, connectionpOptions)
