@@ -7,8 +7,6 @@ const dashboardRouter = require("./routes/dashboard.route");
 
 const app = express();
 app.use(cors());
-app.use(express.json());
-
 
 //database connection with mongoose
 const connectionpOptions = {dbName: `hkhan`}
