@@ -23,4 +23,4 @@ mongoose.connect(process.env.DB_CONNECT_URL, connectionpOptions)
   });
   console.log('connection successfull')
 })
-.catch((err) => console.log(err));
+.catch((err) => console.log(err)); 
