@@ -2,12 +2,6 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const UserModel = require('../models/users.model');
 
-
-exports.Index = (req, res) => {
-  return res.send(req.authUser);
-  //return res.sendFile(path.join(__dirname + "/../views/index.html"));
-};
-
 exports.userRegister = async function (req, res) {
   const {room, name, phone, password} = req.body;
   const User = new UserModel({ room, name, phone, password: await bcrypt.hash(password, 10) });
