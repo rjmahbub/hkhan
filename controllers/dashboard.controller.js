@@ -28,4 +28,4 @@ exports.userRegister = async function (req, res) {
       'message': 'Server Error!'
     });
   }
-};
+}; 
